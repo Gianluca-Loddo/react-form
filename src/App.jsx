@@ -6,7 +6,7 @@ function App() {
  
   return (
     <> {/* React Fragment */}
-     <h1>react-form</h1>
+     <h1 className='text-center mb-4'>react-form</h1>
     </>
   );
 }
