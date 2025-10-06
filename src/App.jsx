@@ -4,16 +4,13 @@ import './App.css'
 
 function App() {
 
-  const [articles] = useState([ 
-    /* stato iniziale con array di oggetti, ognuno con id e title, senza la funzione di setArticles perchè non serve
-      const [articles, setArticles] = useState([...]);*/ 
-    
+  const [articles, setArticles] = useState([
     { id: 1, title: "Primo post di prova" },
     { id: 2, title: "Secondo post di prova" },
     { id: 3, title: "Terzo post di prova" },
   ]);
 
-
+  const [newTitle, setNewTitle] = useState(''); // stato per il titolo del nuovo articolo
 
   return (
     <> {/* React Fragment */}
@@ -22,7 +19,7 @@ function App() {
 
         <h2 className="mb-3">Articoli</h2>
 
-        {/* Milestone 1 - lista titoli */}
+        {/* Milestone 1: visualizzazione statica lista articoli */}
         <ul className="list-group"> {/* Lista di Bootstrap */}
           {articles.map((article, i) => (
             <li key={i} className="list-group-item"> {/* Elemento di lista di Bootstrap */}
