@@ -27,12 +27,14 @@ function App() {
     setNewTitle(''); // resetta il campo di input del nuovo articolo (svuotandolo)
   };
 
+    const isEmpty = newTitle.trim().length === 0; // verifica se il titolo è vuoto (dopo aver rimosso gli spazi bianchi)
+
   return (
     <> {/* React Fragment */}
       
       <div className="container py-4"> {/* Bootstrap container con padding verticale */}
         <h1 className="text-center mb-4">react-form</h1> {/* Titolo centrato con margine inferiore */}      
-        <h2 className="mb-3">Articoli</h2>
+        <h2 className="mb-3"> Nuovo Articolo</h2>
 
         {/* Form controllato */}
 
@@ -45,12 +47,14 @@ function App() {
               value={newTitle}
               onChange={(event) => setNewTitle(event.target.value)} // aggiorna lo stato del titolo del nuovo articolo al cambiamento dell'input
             />
-            <button type="submit" className="btn btn-primary"> {/* Bottone per aggiungere un articolo */}
+            <button type="submit" className="btn btn-primary" disabled={isEmpty}> {/* Bottone per aggiungere un articolo (disabilitato se il titolo è vuoto) */}
               Aggiungi il tuo articolo
             </button>
           </div>
         </form>
-        <h2 className="mb-3">Articoli</h2>
+       
+       
+        <h2 className="mb-3">Articoli già pubblicati</h2>
 
         {/* Lista dinamica */}
         <ul className="list-group">
