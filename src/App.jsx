@@ -62,9 +62,10 @@ function App() {
               {/* BONUS: bottone icona cestino per eliminare (Bootstrap Icons) */}
               <button 
               type='button'
-              className="btn btn-sm btn-outline-danger" 
-              aria-label={`Elimina ${title}`}
-              onClick={() => deleteTitle(i)}
+              className="btn btn-sm btn-outline-danger" // bottone piccolo, outline rosso
+              aria-label={`Elimina ${title}`} // accessibilità per screen reader
+              onClick={() => deleteTitle(i)} 
+              style={{ float: 'right' }} // posiziona il bottone a destra
               >
                 <i className="bi bi-trash"></i> {/* icona cestino */}
               </button>
